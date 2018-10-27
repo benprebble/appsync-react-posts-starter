@@ -19,11 +19,11 @@ import DeletePostMutation from './Queries/DeletePostMutation';
 import UpdatePostMutation from './Queries/UpdatePostMutation';
 
 const client = new AWSAppSyncClient({
-    url: 'https://l5npozw72rc37lx6otfzqcidsm.appsync-api.ap-southeast-2.amazonaws.com/graphql',//AppSync.graphqlEndpoint,
-    region: 'ap-southeast-2',
+    url: AppSync.aws_appsync_graphqlEndpoint,
+    region: AppSync.aws_appsync_region,
     auth: {
-        type: AUTH_TYPE.API_KEY,
-        apiKey: 'da2-dmuq4c5gl5ffnkucyppc42auom',
+        type: AUTH_TYPE[AppSync.aws_appsync_authenticationType],
+        apiKey: AppSync.aws_appsync_apiKey,
 
         // type: AUTH_TYPE.AWS_IAM,
         // Note - Testing purposes only
