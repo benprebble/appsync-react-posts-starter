@@ -1,16 +1,10 @@
-
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import gqlLogo from './gql-logo.svg';
 import './App.css';
-
-import AllPosts from "./Components/AllPosts";
-import AddPost from "./Components/AddPost";
-
-
-import AWSAppSyncClient from "aws-appsync";
+import AWSAppSyncClient from 'aws-appsync';
 import { Rehydrated } from 'aws-appsync-react';
-import { AUTH_TYPE } from "aws-appsync/lib/link/auth-link";
+import { AUTH_TYPE } from 'aws-appsync/lib/link/auth-link';
 import { graphql, ApolloProvider, compose } from 'react-apollo';
 import * as AWS from 'aws-sdk';
 import AppSync from './aws-exports.js';
@@ -18,6 +12,8 @@ import AllPostsQuery from './Queries/AllPostsQuery';
 import NewPostMutation from './Queries/NewPostMutation';
 import DeletePostMutation from './Queries/DeletePostMutation';
 import UpdatePostMutation from './Queries/UpdatePostMutation';
+import AllPosts from './Components/AllPosts';
+import AddPost from './Components/AddPost';
 
 const client = new AWSAppSyncClient({
     url: AppSync.aws_appsync_graphqlEndpoint,
@@ -49,11 +45,11 @@ const client = new AWSAppSyncClient({
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <img src={gqlLogo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to appsync-react-posts-starter</h1>
+            <div className='App'>
+                <header className='App-header'>
+                    <img src={logo} className='App-logo' alt='logo' />
+                    <img src={gqlLogo} className='App-logo' alt='logo' />
+                    <h1 className='App-title'>Welcome to appsync-react-posts-starter</h1>
                 </header>
                 <NewPostWithData />
                 <AllPostsWithData />
