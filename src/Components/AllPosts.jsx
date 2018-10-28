@@ -112,7 +112,7 @@ export default class AllPosts extends Component {
                 { ! posts.length
                     ?
                         <Row>
-                            <Col sm='12' md={{ size: 5, offset: 4 }}>
+                            <Col sm={{ size: 'auto', offset: 4 }}>
                                 <Alert color='warning'>
                                     No posts
                                 </Alert>
