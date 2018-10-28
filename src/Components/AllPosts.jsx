@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import {
+    Container,
+    Row,
+    Col,
+    Alert,
+    Button
+} from 'reactstrap';
 
 export default class AllPosts extends Component {
 
@@ -102,19 +108,36 @@ export default class AllPosts extends Component {
         const { posts } = this.props;
 
         return (
-            <table width='100%' className='table'>
-                <thead>
-                    <tr>
-                        <th scope='col' width='10%'>id</th>
-                        <th scope='col' width='50%'>title</th>
-                        <th scope='col' width='20%'>author</th>
-                        <th scope='col' width='20%'>action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {[].concat(posts).sort((a, b) => b.id - a.id).map(this.renderOrEditPost)}
-                </tbody>
-            </table>
+            <Container>
+                { ! posts.length
+                    ?
+                        <Row>
+                            <Col sm='12' md={{ size: 5, offset: 4 }}>
+                                <Alert color='warning'>
+                                    No posts
+                                </Alert>
+                            </Col>
+                        </Row>
+                    :
+                        <Row>
+                            <Col>
+                                <table width='100%' className='table'>
+                                    <thead>
+                                    <tr>
+                                        <th scope='col' width='10%'>id</th>
+                                        <th scope='col' width='50%'>title</th>
+                                        <th scope='col' width='20%'>author</th>
+                                        <th scope='col' width='20%'>action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {[].concat(posts).sort((a, b) => b.id - a.id).map(this.renderOrEditPost)}
+                                    </tbody>
+                                </table>
+                            </Col>
+                        </Row>
+                }
+            </Container>
         );
     }
 }
