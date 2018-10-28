@@ -1,4 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import {
+    Container,
+    Col,
+    Button,
+    Form,
+    FormGroup,
+    Input,
+    InputGroup,
+    InputGroupAddon
+} from 'reactstrap';
 
 export default class AddPost extends Component {
 
@@ -39,22 +49,36 @@ export default class AddPost extends Component {
 
     render() {
         return (
-            <fieldset >
-                <legend>Add new Post</legend>
-                <div>
-                    <label>ID<input type="text" placeholder="ID" value={this.state.id} onChange={this.handleChange.bind(this, 'id')} /></label>
-                </div>
-                <div>
-                    <label>Title<input type="text" placeholder="Title" value={this.state.title} onChange={this.handleChange.bind(this, 'title')} /></label>
-                </div>
-                <div>
-                    <label>Author<input type="text" placeholder="Author" value={this.state.author} onChange={this.handleChange.bind(this, 'author')} /></label>
-                </div>
-                <div>
-                    <button onClick={this.handleAdd}>Add new post</button>
-                    <button onClick={this.handleCancel}>Cancel</button>
-                </div>
-            </fieldset>
+            <Container>
+                <Col xs='auto'>
+                    <Form>
+                        <FormGroup>
+                            <legend>Add new Post</legend>
+
+                            <InputGroup>
+                                <InputGroupAddon addonType='prepend'>ID</InputGroupAddon>
+                                <Input type='text' placeholder='ID' value={this.state.id} onChange={this.handleChange.bind(this, 'id')} />
+                            </InputGroup>
+                            <br />
+                            <InputGroup>
+                                <InputGroupAddon addonType='prepend'>Title</InputGroupAddon>
+                                <Input type='text' placeholder='Title' value={this.state.title} onChange={this.handleChange.bind(this, 'title')} />
+                            </InputGroup>
+                            <br />
+                            <InputGroup>
+                                <InputGroupAddon addonType='prepend'>Author</InputGroupAddon>
+                                <Input type='text' placeholder='Author' value={this.state.author} onChange={this.handleChange.bind(this, 'author')} />
+                            </InputGroup>
+
+                            <br />
+                            <div>
+                                <Button color='success' onClick={this.handleAdd}>Add new post</Button>{' '}
+                                <Button color='primary' onClick={this.handleCancel}>Cancel</Button>
+                            </div>
+                        </FormGroup>
+                    </Form>
+                </Col>
+            </Container>
         );
     }
 }
