@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import gqlLogo from './gql-logo.svg';
 import './App.css';
 
 import AllPosts from "./Components/AllPosts";
@@ -51,7 +52,8 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+                    <img src={gqlLogo} className="App-logo" alt="logo" />
+                    <h1 className="App-title">Welcome to appsync-react-posts-starter</h1>
                 </header>
                 <NewPostWithData />
                 <AllPostsWithData />
