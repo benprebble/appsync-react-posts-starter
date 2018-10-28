@@ -73,8 +73,8 @@ export default class AllPosts extends Component {
                         <td>{post.author}</td>
                         <td>
                             <div>
-                                <Button color='primary' size="sm" onClick={this.handleEdit.bind(this, post)}>Edit</Button>{' '}
-                                <Button color='danger' size="sm" onClick={this.handleDelete.bind(this, post)}>Delete</Button>
+                                <Button color='primary' size='sm' onClick={this.handleEdit.bind(this, post)}>Edit</Button>{' '}
+                                <Button color='danger' size='sm' onClick={this.handleDelete.bind(this, post)}>Delete</Button>
                             </div>
                         </td>
                     </tr>
@@ -90,8 +90,8 @@ export default class AllPosts extends Component {
                             <input type='text' value={editData.author} onChange={this.handleFieldEdit.bind(this, post.id, 'author')} />
                         </td>
                         <td>
-                            <Button color="success" size="sm" onClick={this.handleEditSave.bind(this, post.id)}>Save</Button>{' '}
-                            <Button color='primary' size="sm" onClick={this.handleEditCancel.bind(this, post.id)}>Cancel</Button>
+                            <Button color='success' size='sm' onClick={this.handleEditSave.bind(this, post.id)}>Save</Button>{' '}
+                            <Button color='primary' size='sm' onClick={this.handleEditCancel.bind(this, post.id)}>Cancel</Button>
                         </td>
                     </tr>
                 )

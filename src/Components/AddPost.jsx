@@ -50,7 +50,7 @@ export default class AddPost extends Component {
     render() {
         return (
             <Container>
-                <Col xs='auto'>
+                <Col sm='12' md={{ size: 6, offset: 3 }}>
                     <Form>
                         <FormGroup>
                             <legend>Add new Post</legend>
